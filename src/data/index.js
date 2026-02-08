@@ -1,0 +1,9 @@
+export { default as clientLogos } from "./clients";
+export { default as navigationItems } from "./navigation";
+export { default as partnersData } from "./partners";
+export { default as servicesData } from "./services";
+export { default as statsData } from "./stats";
+export { default as SOCIAL_LINKS } from "./social";
+export { default as CONTACT_INFO } from "./contact";
+export { default as newsItems } from "./news";
+export { default as teamMembers } from "./team";

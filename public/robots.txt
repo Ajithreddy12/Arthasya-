@@ -1,0 +1,9 @@
+# /public/robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.arthasya.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

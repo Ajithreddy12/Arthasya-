@@ -1,0 +1,1 @@
+export * as animate from './animations';

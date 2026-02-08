@@ -4,13 +4,13 @@ import {
   Home,
   About,
   Services,
-  Contact,
   Careers,
   Freelancer,
   PartnerDetail,
   ClientDetail,
   NotFound,
 } from "./pages";
+import Contact from "./pages/Contact";
 
 function App() {
   return (

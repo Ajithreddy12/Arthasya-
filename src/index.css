@@ -1,42 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@reference "tailwindcss";
+
+@theme {
+    /* Updated Dark Theme Colors - Binge Watch Digital */
+    --color-primary: #ec4899;
+    /* Pink/Magenta for primary actions */
+    --color-primary-light: #f472b6;
+    --color-primary-dark: #be185d;
+
+    --color-accent: #a855f7;
+    --color-accent-light: #c084fc;
+    --color-accent-dark: #7e22ce;
+
+    --color-ivory: #ffffff;
+    /* White text */
+    --color-charcoal: #ffffff;
+
+    --color-bg-dark: #140412;
+    /* Main dark background */
+    --color-surface-dark: #2a0a24;
+    /* Slightly lighter surface */
+
+    --font-heading: "Plus Jakarta Sans", sans-serif;
+    --font-body: "Plus Jakarta Sans", sans-serif;
+    --font-serif: "Playfair Display", serif;
+}
 
 @layer base {
-    :root {
-        /* Updated Dark Theme Colors - Binge Watch Digital */
-        --color-primary: #ec4899;
-        /* Pink/Magenta for primary actions */
-        --color-primary-light: #f472b6;
-        --color-primary-dark: #be185d;
-
-        --color-accent: #a855f7;
-        /* Purple as secondary accent */
-        --color-accent-light: #c084fc;
-        --color-accent-dark: #7e22ce;
-
-        --color-ivory: #ffffff;
-        /* White text */
-        --color-charcoal: #ffffff;
-
-        --color-bg-dark: #140412;
-        /* Main dark background */
-        --color-surface-dark: #2a0a24;
-        /* Slightly lighter surface */
-
-        --font-heading: 'Plus Jakarta Sans', sans-serif;
-        --font-body: 'Plus Jakarta Sans', sans-serif;
-        --font-serif: 'Playfair Display', serif;
-    }
-
     html {
         scroll-behavior: smooth;
         background-color: var(--color-bg-dark);
     }
 
     body {
-        @apply font-sans antialiased bg-white text-[#1a1a1a] overflow-x-hidden;
+        /* Using var instead of @apply font-body to avoid any compilation order issues */
+        font-family: var(--font-body);
+        @apply antialiased bg-white text-[#1a1a1a] overflow-x-hidden;
     }
 
     /* Custom Scrollbar */

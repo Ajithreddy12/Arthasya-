@@ -2,6 +2,7 @@ export { default as Home } from "./Home";
 export { default as About } from "./About";
 export { default as Services } from "./Services";
 export { default as Contact } from "./Contact";
+
 export { default as Careers } from "./Careers";
 export { default as Freelancer } from "./Freelancer";
 export { default as ClientDetail } from "./ClientDetail";

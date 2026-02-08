@@ -1,21 +1,21 @@
 import { Container, AnimatedSection } from "../../layout";
 import { motion } from "framer-motion";
-import { Palette, PenTool, Megaphone } from "lucide-react"; 
+import { Palette, PenTool, Megaphone } from "lucide-react";
 
 const FreelancerHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 sm:pt-20 pb-20 bg-ivory overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#2B2B2B 1px, transparent 1px), linear-gradient(to right, #2B2B2B 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      ></div>
-
-      <div className="absolute top-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px]" />
+    <section className="relative min-h-screen flex items-center pt-32 sm:pt-20 pb-20 bg-[#0d0208] overflow-hidden">
+      {/* Background Image with Light Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1920"
+          alt="Freelance Background"
+          className="w-full h-full object-cover"
+        />
+        {/* Lighter overlay to reveal photos */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2e0b28]/80 via-[#581c4e]/50 to-[#140412]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#140412]/30 via-transparent to-[#140412]" />
+      </div>
 
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -25,40 +25,40 @@ const FreelancerHero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block sm:mt-10 lg:mt-0 px-4 py-2 bg-charcoal/5 rounded-full mb-6">
-                <span className="text-sm font-semibold text-charcoal">
+              <div className="inline-block sm:mt-10 lg:mt-0 px-4 py-2 bg-[#ec4899]/10 rounded-full mb-6 border border-[#ec4899]/20">
+                <span className="text-sm font-semibold text-[#ec4899]">
                   Join Our Network
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl font-bold text-charcoal mb-6 leading-tight">
-                Freelance with <span className="text-primary">Purpose</span>
+              <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 leading-tight">
+                Freelance with <span className="text-[#ec4899]">Purpose</span>
               </h1>
 
-              <div className="w-20 h-1 bg-accent mb-8" />
+              <div className="w-20 h-1 bg-gradient-to-r from-[#ec4899] to-[#a855f7] mb-8" />
 
-              <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              <p className="text-xl text-gray-300 leading-relaxed mb-6">
                 Are you a talented professional looking for exciting projects?
                 Join our ecosystem of creatives and collaborate on challenging,
                 rewarding assignments without the hassle of client management.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-8">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 rounded-md">
-                  <Palette className="w-4 h-4 text-accent" />
-                  <span className="text-sm font-medium text-gray-700">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-md backdrop-blur-sm">
+                  <Palette className="w-4 h-4 text-[#ec4899]" />
+                  <span className="text-sm font-medium text-white">
                     Designers
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 rounded-md">
-                  <PenTool className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-gray-700">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-md backdrop-blur-sm">
+                  <PenTool className="w-4 h-4 text-[#ec4899]" />
+                  <span className="text-sm font-medium text-white">
                     Writers
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 rounded-md">
-                  <Megaphone className="w-4 h-4 text-rose-500" />
-                  <span className="text-sm font-medium text-gray-700">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-md backdrop-blur-sm">
+                  <Megaphone className="w-4 h-4 text-[#ec4899]" />
+                  <span className="text-sm font-medium text-white">
                     Marketers
                   </span>
                 </div>

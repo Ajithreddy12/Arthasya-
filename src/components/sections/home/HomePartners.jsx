@@ -4,7 +4,7 @@ import { PartnerCarousel, SectionHeading } from "../../element";
 
 const HomePartners = () => {
   return (
-    <section className="py-20 bg-ivory">
+    <section className="py-20 bg-white">
       <Container>
         <AnimatedSection>
           <SectionHeading

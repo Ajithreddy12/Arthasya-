@@ -1,65 +1,47 @@
-import { Container, AnimatedSection } from "../../layout";
-import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Container, AnimatedSection } from '../../layout';
 
 const ContactHero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center pt-32 sm:pt-20 pb-20 bg-ivory overflow-hidden">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+    return (
+        <section className="relative min-h-[60vh] flex items-center pt-20 overflow-hidden bg-white">
+            <Container className="relative z-10">
+                <div className="max-w-4xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6"
+                    >
+                        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                        <span className="text-xs font-bold text-primary uppercase tracking-widest">Connect With Us</span>
+                    </motion.div>
 
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <AnimatedSection>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-block sm:mt-10 lg:mt-0 px-4 py-2 bg-accent/10 rounded-full mb-6">
-                <span className="text-sm font-semibold text-accent-dark">
-                  Get in Touch
-                </span>
-              </div>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[1.1] mb-8 tracking-tight"
+                    >
+                        Let's Create Your <span className="text-primary italic">Success Story.</span>
+                    </motion.h1>
 
-              <h1 className="text-4xl sm:text-6xl font-bold text-charcoal mb-6 leading-tight">
-                Ready to build something <span className="text-primary">Amazing?</span>
-              </h1>
-
-              <div className="w-20 h-1 bg-primary mb-8" />
-
-              <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Great ideas start with a simple conversation. Share your vision
-                with us, and together we'll turn it into something remarkable.
-                At BW Digital, we believe every great partnership begins with
-                a simple conversation.
-              </p>
-            </motion.div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-accent/10 rounded-2xl transform -rotate-2" />
-
-              <div className="relative bg-white p-4 rounded-2xl shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=600&h=400&fit=crop"
-                  alt="Contact support team"
-                  className="rounded-xl w-full object-cover aspect-[4/3]"
-                />
-
-                <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-xl shadow-xl text-center min-w-[140px]">
-                  <div className="text-3xl font-bold">24/7</div>
-                  <div className="text-sm font-medium opacity-90">
-                    Always Open
-                  </div>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed"
+                    >
+                        Whether you have a specific project in mind or just want to explore the possibilities,
+                        we're here to help you navigate the digital landscape.
+                    </motion.p>
                 </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </Container>
-    </section>
-  );
+            </Container>
+
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-50 to-transparent -z-10" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10" />
+        </section>
+    );
 };
 
 export default ContactHero;

@@ -39,7 +39,7 @@ const AboutKnowUs = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
           <AnimatedSection>
-            <h2 className="text-4xl font-bold text-charcoal mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Know Us Better
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
@@ -72,11 +72,11 @@ const AboutKnowUs = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-ivory p-6 rounded-lg"
+                className="bg-white border border-gray-100 p-6 rounded-lg hover:shadow-lg transition-all duration-300 shadow-sm"
               >
                 <div className="flex items-start space-x-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">
+                    <h3 className="text-xl font-semibold text-[#ec4899] mb-2">
                       {value.title}
                     </h3>
                     <p className="text-gray-600">{value.desc}</p>

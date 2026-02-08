@@ -19,7 +19,7 @@ const ClientCardWrapper = ({ client }) => {
       className="flex-shrink-0 group w-48 text-center cursor-pointer"
       onClick={handleClick}
     >
-      <div className="h-32 flex items-center justify-center transition-all duration-300">
+      <div className="h-32 flex items-center justify-center transition-all duration-300 bg-gray-50 rounded-lg p-4 border border-gray-100 group-hover:bg-white group-hover:shadow-md transition-all">
         <img
           src={client.img}
           alt={client.title}
@@ -27,7 +27,7 @@ const ClientCardWrapper = ({ client }) => {
         />
       </div>
 
-      <p className="mt-2 text-xs font-medium text-charcoal leading-tight group-hover:text-primary transition-colors">
+      <p className="mt-2 text-xs font-medium text-gray-600 leading-tight group-hover:text-primary transition-colors">
         {client.title}
       </p>
     </div>

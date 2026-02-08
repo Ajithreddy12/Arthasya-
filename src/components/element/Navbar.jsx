@@ -1,153 +1,210 @@
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { useMobileMenu } from "../../hooks";
-import { navigationItems } from "../../data";
+import { Menu, X, ChevronRight, Phone } from "lucide-react";
 import { Container } from "../layout";
+import Button from "./Button";
+import { navigationItems } from "../../data";
+
+// Extracted hook for mobile menu logic
+const useMobileMenu = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    // Prevent scrolling when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [isOpen]);
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+    const closeMenu = () => setIsOpen(false);
+
+    return { isOpen, toggleMenu, closeMenu };
+};
 
 const Navbar = () => {
-  const { pathname } = useLocation();
-  const { isOpen, toggleMenu, closeMenu } = useMobileMenu();
+    const { pathname } = useLocation();
+    const { isOpen, toggleMenu, closeMenu } = useMobileMenu();
 
-  return (
-    <LayoutGroup id="navbar-animation">
-      <nav className="fixed inset-x-0 top-0 z-50 bg-white shadow-md">
-        <Container>
-          <div className="flex h-20 items-center justify-between">
-            <Link
-              to="/"
-              onClick={closeMenu}
-              className="flex items-center gap-2"
-            >
-              <img
-                src="/arthasya.png"
-                alt="Arthasya Logo"
-                className="h-20 w-20 object-contain"
-              />
-              <h1 className="font-bold text-charcoal leading-none text-lg sm:text-xl md:text-2xl">
-                Arthasya <span className="text-primary">Communications</span>
-              </h1>
-            </Link>
+    return (
+        <LayoutGroup id="navbar-animation">
+            <nav className="fixed inset-x-0 top-0 z-50 bg-[#140412]/90 backdrop-blur-md border-b border-white/5 shadow-lg transition-all duration-300">
+                <Container>
+                    <div className="flex h-20 items-center justify-between">
+                        {/* Logo */}
+                        <Link
+                            to="/"
+                            onClick={closeMenu}
+                            className="flex items-center gap-3 group"
+                        >
+                            {/* BW Logo - Circle with BW text */}
+                            <div className="w-10 h-10 rounded-full border-2 border-white group-hover:border-[#ec4899] transition-colors duration-300 flex items-center justify-center bg-[#140412]">
+                                <span className="text-white group-hover:text-[#ec4899] font-bold text-sm transition-colors duration-300">BW</span>
+                            </div>
+                            <h1 className="font-bold text-white leading-none text-xl group-hover:text-[#ec4899] transition-colors duration-300 tracking-tight">
+                                Binge Watch<span className="text-gray-400 text-[10px] align-top ml-0.5 font-normal">DIGITAL</span>
+                            </h1>
+                        </Link>
 
-            <motion.div
-              layoutRoot
-              className="hidden items-center gap-1 lg:flex"
-            >
-              {navigationItems.map((item) => {
-                const isActive = pathname === item.path;
+                        {/* Desktop Navigation */}
+                        <motion.div
+                            layoutRoot
+                            className="hidden items-center gap-8 lg:flex"
+                        >
+                            <div className="flex items-center gap-1 rounded-full bg-white/5 p-1 border border-white/10">
+                                {navigationItems.map((item) => {
+                                    const isActive = pathname === item.path;
+                                    return (
+                                        <Link
+                                            key={item.path}
+                                            to={item.path}
+                                            className={`relative px-5 py-2 text-sm font-medium transition-colors duration-300 rounded-full ${isActive ? "text-white" : "text-gray-400 hover:text-white"
+                                                }`}
+                                        >
+                                            {isActive && (
+                                                <motion.div
+                                                    layoutId="activeTab"
+                                                    className="absolute inset-0 rounded-full bg-[#ec4899]"
+                                                    transition={{
+                                                        type: "spring",
+                                                        bounce: 0.2,
+                                                        duration: 0.6,
+                                                    }}
+                                                />
+                                            )}
+                                            <span className="relative z-10">{item.label}</span>
+                                        </Link>
+                                    );
+                                })}
+                            </div>
 
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={`
-                      relative rounded-lg px-4 py-2 text-sm md:text-base font-semibold transition-all duration-300
-                      ${
-                        isActive
-                          ? "text-primary"
-                          : "text-charcoal hover:text-primary"
-                      }
-                    `}
-                  >
-                    {item.label}
+                            <Button
+                                variant="primary"
+                                className="bg-gradient-to-r from-[#ec4899] to-[#be185d] hover:from-[#be185d] hover:to-[#9d174d] text-white border-0 shadow-lg shadow-pink-500/20"
+                                onClick={() => window.location.href = 'tel:+919876543210'}
+                            >
+                                <Phone className="mr-2 h-4 w-4" />
+                                <span>Let's Talk</span>
+                            </Button>
+                        </motion.div>
 
-                    {isActive && (
-                      <motion.div
-                        layoutId="navbar-indicator"
-                        className="absolute inset-x-0 bottom-0 h-0.5 bg-primary"
-                        initial={false}
-                        transition={{
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 30,
-                        }}
-                      />
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={toggleMenu}
+                            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
+                            aria-label="Toggle menu"
+                        >
+                            <AnimatePresence mode="wait">
+                                {isOpen ? (
+                                    <motion.div
+                                        key="close"
+                                        initial={{ rotate: -90, opacity: 0 }}
+                                        animate={{ rotate: 0, opacity: 1 }}
+                                        exit={{ rotate: 90, opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <X className="h-5 w-5" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.div
+                                        key="menu"
+                                        initial={{ rotate: 90, opacity: 0 }}
+                                        animate={{ rotate: 0, opacity: 1 }}
+                                        exit={{ rotate: -90, opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <Menu className="h-5 w-5" />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </button>
+                    </div>
+                </Container>
+
+                {/* Mobile Menu Overlay */}
+                <AnimatePresence>
+                    {isOpen && (
+                        <>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+                                onClick={closeMenu}
+                            />
+                            <motion.div
+                                initial={{ x: "100%" }}
+                                animate={{ x: 0 }}
+                                exit={{ x: "100%" }}
+                                transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                                className="fixed inset-y-0 right-0 z-40 w-full max-w-sm bg-[#1a0a14] shadow-2xl lg:hidden border-l border-white/10"
+                            >
+                                <div className="flex h-full flex-col p-6 pt-24">
+                                    <nav className="flex flex-col space-y-2">
+                                        {navigationItems.map((item, index) => {
+                                            const isActive = pathname === item.path;
+                                            return (
+                                                <motion.div
+                                                    key={item.path}
+                                                    initial={{ x: 50, opacity: 0 }}
+                                                    animate={{ x: 0, opacity: 1 }}
+                                                    transition={{ delay: index * 0.1 }}
+                                                >
+                                                    <Link
+                                                        to={item.path}
+                                                        onClick={closeMenu}
+                                                        className={`group flex items-center justify-between rounded-xl p-4 text-lg font-medium transition-all ${isActive
+                                                            ? "bg-[#ec4899]/10 text-[#ec4899]"
+                                                            : "text-gray-400 hover:bg-white/5 hover:text-white"
+                                                            }`}
+                                                    >
+                                                        <span>{item.label}</span>
+                                                        <ChevronRight
+                                                            className={`h-5 w-5 transition-transform group-hover:translate-x-1 ${isActive ? "text-[#ec4899]" : "text-gray-600"
+                                                                }`}
+                                                        />
+                                                    </Link>
+                                                </motion.div>
+                                            );
+                                        })}
+                                    </nav>
+
+                                    <motion.div
+                                        initial={{ y: 50, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        transition={{ delay: 0.4 }}
+                                        className="mt-auto"
+                                    >
+                                        <div className="rounded-2xl bg-gradient-to-br from-[#ec4899]/20 to-[#a855f7]/20 p-6 border border-white/10">
+                                            <h3 className="mb-2 text-lg font-bold text-white">
+                                                Let's create something specific?
+                                            </h3>
+                                            <p className="mb-4 text-sm text-gray-400">
+                                                We're ready to help bring your vision to life.
+                                            </p>
+                                            <Button
+                                                className="w-full justify-center bg-[#ec4899] hover:bg-[#be185d] text-white border-0"
+                                                onClick={() => window.location.href = 'tel:+919876543210'}
+                                            >
+                                                Start Project
+                                            </Button>
+                                        </div>
+                                    </motion.div>
+                                </div>
+                            </motion.div>
+                        </>
                     )}
-                  </Link>
-                );
-              })}
-            </motion.div>
-
-            <button
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-              className="
-                rounded-md p-2 lg:hidden
-                hover:bg-gray-100
-                focus:outline-none focus:ring-2 focus:ring-primary
-              "
-            >
-              <div className="flex h-5 w-6 flex-col justify-between">
-                <motion.span
-                  className="block h-0.5 w-full rounded-full bg-charcoal"
-                  animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                />
-                <motion.span
-                  className="block h-0.5 w-full rounded-full bg-charcoal"
-                  animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                />
-                <motion.span
-                  className="block h-0.5 w-full rounded-full bg-charcoal"
-                  animate={
-                    isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
-                  }
-                />
-              </div>
-            </button>
-          </div>
-        </Container>
-
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              <motion.div
-                className="fixed inset-0 z-40 bg-black/50 md:hidden"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={closeMenu}
-              />
-
-              <motion.div
-                className="
-                  fixed right-0 top-20 bottom-0 z-50 w-64
-                  overflow-y-auto bg-white shadow-lg md:hidden
-                "
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ type: "tween", duration: 0.3 }}
-              >
-                <div className="flex flex-col gap-2 p-6">
-                  {navigationItems.map((item) => {
-                    const isActive = pathname === item.path;
-
-                    return (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        onClick={closeMenu}
-                        className={`
-                          rounded-lg px-4 py-3 text-base font-semibold sm:text-lg transition-all duration-300
-                          ${
-                            isActive
-                              ? "bg-primary text-white"
-                              : "text-charcoal hover:bg-ivory"
-                          }
-                        `}
-                      >
-                        {item.label}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
-      </nav>
-    </LayoutGroup>
-  );
+                </AnimatePresence>
+            </nav>
+        </LayoutGroup>
+    );
 };
 
 export default Navbar;

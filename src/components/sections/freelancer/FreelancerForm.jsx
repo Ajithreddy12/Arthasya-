@@ -186,14 +186,13 @@ const FreelancerForm = () => {
         </AnimatedSection>
 
         <AnimatedSection className="max-w-3xl mx-auto mt-12">
-          <div className="bg-ivory p-8 rounded-lg shadow-lg">
+          <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
             {submitStatus.message && (
               <div
-                className={`mb-6 p-4 rounded-lg border ${
-                  submitStatus.type === "success"
-                    ? "bg-green-100 border-green-400 text-green-700"
-                    : "bg-red-100 border-red-400 text-red-700"
-                }`}
+                className={`mb-6 p-4 rounded-lg border ${submitStatus.type === "success"
+                  ? "bg-green-100 border-green-400 text-green-700"
+                  : "bg-red-100 border-red-400 text-red-700"
+                  }`}
                 role="alert"
               >
                 {submitStatus.message}

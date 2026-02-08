@@ -16,17 +16,17 @@ const NotFound = () => {
                 </h1>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center animate-pulse">
-                    <svg 
-                      className="w-16 h-16 md:w-20 md:h-20 text-primary" 
-                      fill="none" 
-                      stroke="currentColor" 
+                    <svg
+                      className="w-16 h-16 md:w-20 md:h-20 text-primary"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={1.5} 
-                        d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
                   </div>
@@ -37,9 +37,9 @@ const NotFound = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">
                 Page Not Found
               </h2>
-              
+
               <p className="text-lg text-charcoal/70 mb-8 leading-relaxed">
-                Oops! The page you're looking for seems to have wandered off. 
+                Oops! The page you're looking for seems to have wandered off.
                 Let's get you back on track.
               </p>
 
@@ -51,7 +51,7 @@ const NotFound = () => {
                 >
                   Go Back
                 </button>
-                
+
                 <button
                   onClick={() => navigate('/')}
                   className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 min-w-[160px]"
@@ -70,7 +70,8 @@ const NotFound = () => {
                     { name: 'About Us', path: '/about' },
                     { name: 'Services', path: '/services' },
                     { name: 'Careers', path: '/careers' },
-                    { name: 'Contact', path: '/contact' },
+                    { name: 'Freelancer', path: '/freelancer' },
+                    { name: 'Contact Us', path: '/contact' },
                   ].map((link) => (
                     <button
                       key={link.path}

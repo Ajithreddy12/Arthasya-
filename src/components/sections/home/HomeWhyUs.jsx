@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion';
 import { statsData } from '../../../data';
-import {Container, AnimatedSection} from '../../layout';
-import {SectionHeading, StatCard} from '../../element';
+import { Container, AnimatedSection } from '../../layout';
+import { SectionHeading, StatCard } from '../../element';
 import { staggerContainer, fadeInUp } from '../../../utils/animations';
 import { useNavigate } from 'react-router-dom';
 
 const HomeWhyUs = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <section className="py-20 bg-white">
       <Container>
         <AnimatedSection>
-          <SectionHeading 
+          <SectionHeading
             backgroundText="WHY US"
             title="Excellence in every aspect"
             ctaText="About Us"
@@ -54,11 +54,11 @@ const HomeWhyUs = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start space-x-4 p-4 bg-ivory rounded-lg hover:shadow-md transition-shadow duration-300"
+                  className="flex items-start space-x-4 p-4 bg-gray-50 border border-gray-100 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300"
                 >
                   <span className="text-3xl">{item.icon}</span>
                   <div>
-                    <h3 className="font-semibold text-charcoal mb-1">{item.title}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
                     <p className="text-gray-600 text-sm">{item.desc}</p>
                   </div>
                 </motion.div>

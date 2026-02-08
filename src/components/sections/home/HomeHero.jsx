@@ -126,7 +126,7 @@ const HomeHero = () => {
       return (
         <>
           {parts[0]}{" "}
-          <span className="text-primary inline-block">Digital</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#a855f7] inline-block font-extrabold">Digital</span>
         </>
       );
     }
@@ -135,7 +135,7 @@ const HomeHero = () => {
 
   return (
     <section
-      className="relative h-[95vh]  w-full bg-charcoal overflow-hidden rounded-b-[2rem] md:rounded-b-[4rem] lg:rounded-b-[5rem] shadow-2xl"
+      className="relative h-[95vh] w-full bg-[#140412] overflow-hidden shadow-2xl"
       style={{ isolation: "isolate" }}
     >
       <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
@@ -157,8 +157,10 @@ const HomeHero = () => {
               placeholder={slides[index].thumbnail}
               alt={slides[index].title}
             />
-            <div className="absolute inset-0 bg-black/40 md:bg-transparent md:bg-gradient-to-r md:from-charcoal/90 md:via-charcoal/30 md:to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-black/20" />
+            {/* Very light overlay to barely tint the photos, maximizing visibility */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2e0b28]/60 via-[#581c4e]/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#140412]/70" />
+            <div className="absolute inset-0 bg-[#ec4899]/10 mix-blend-overlay" />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -181,13 +183,13 @@ const HomeHero = () => {
                   transition={{ delay: 0.2 }}
                   className="flex items-center gap-3 mb-4 md:mb-6"
                 >
-                  <span className="h-[2px] w-6 md:w-10 bg-primary rounded-full block" />
-                  <span className="text-primary-light font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase text-[10px] md:text-xs">
+                  <span className="h-[2px] w-6 md:w-10 bg-[#ec4899] rounded-full block" />
+                  <span className="text-[#ec4899] font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase text-[10px] md:text-xs">
                     {slides[index].subtitle}
                   </span>
                 </motion.div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[85px] xl:text-[100px] font-bold text-ivory leading-[1.1] md:leading-[1.05] tracking-tight mb-6 md:mb-0 break-words">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[85px] xl:text-[100px] font-bold text-white leading-[1.1] md:leading-[1.05] tracking-tight mb-6 md:mb-0 break-words drop-shadow-lg">
                   {renderTitle(slides[index].title, slides[index].id)}
                 </h1>
               </div>
@@ -197,7 +199,7 @@ const HomeHero = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="text-sm md:text-lg text-ivory/80 leading-relaxed mb-8 md:mb-10 max-w-md md:border-l-2 border-primary/40 md:pl-6"
+                  className="text-sm md:text-lg text-gray-200 leading-relaxed mb-8 md:mb-10 max-w-md md:border-l-2 border-[#ec4899]/40 md:pl-6"
                 >
                   {slides[index].description}
                 </motion.p>
@@ -210,7 +212,7 @@ const HomeHero = () => {
                 >
                   <Button
                     onClick={() => navigate(slides[index].link)}
-                    className="bg-primary hover:bg-primary-dark text-white px-8py-4 rounded-full flex items-center justify-center gap-3 group transition-all text-xs md:text-sm uppercase font-bold tracking-wider"
+                    className="bg-gradient-to-r from-[#ec4899] to-[#be185d] hover:from-[#be185d] hover:to-[#9d174d] text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 group transition-all text-xs md:text-sm uppercase font-bold tracking-wider shadow-lg shadow-pink-500/20"
                   >
                     <span>{slides[index].cta}</span>
                     <Send className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -221,7 +223,7 @@ const HomeHero = () => {
                     href="/Portfolio.pptx"
                     download
                     variant="outline"
-                    className="w-full border-white/20 text-ivory px-8 py-4 rounded-full flex items-center justify-center gap-3 backdrop-blur-md transition-all text-xs md:text-sm uppercase font-bold tracking-wider"
+                    className="w-full border-white/20 hover:border-pink-500/50 hover:bg-pink-500/10 text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 backdrop-blur-md transition-all text-xs md:text-sm uppercase font-bold tracking-wider"
                   >
                     <Download className="w-4 h-4" />
                     <span>Portfolio</span>
@@ -261,7 +263,7 @@ const HomeHero = () => {
                       duration: slideDuration / 1000,
                       ease: "linear",
                     }}
-                    className="absolute inset-0 bg-primary"
+                    className="absolute inset-0 bg-[#ec4899]"
                   />
                 )}
               </button>

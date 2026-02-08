@@ -7,7 +7,7 @@ const HomeServices = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 bg-ivory">
+    <section className="py-20 bg-white">
       <Container>
         <AnimatedSection>
           <SectionHeading

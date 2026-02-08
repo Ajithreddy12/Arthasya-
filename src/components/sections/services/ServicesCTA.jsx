@@ -6,16 +6,16 @@ const ServicesCTA = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+    <section className="py-20 bg-white">
       <Container>
-        <AnimatedSection className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 leading-relaxed opacity-90">
+        <AnimatedSection className="text-center max-w-3xl mx-auto p-12 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+          <h2 className="text-4xl font-bold mb-6 text-gray-900">Ready to Get Started?</h2>
+          <p className="text-xl mb-8 leading-relaxed text-gray-600">
             Let's discuss how our services can help you achieve your business
             goals. Contact us today for a free consultation.
           </p>
-          <Button variant="secondary" onClick={() => navigate("/contact")}>
-            Contact Us Now
+          <Button onClick={() => window.location.href = 'tel:+919929017095'}>
+            Call Us Now
           </Button>
         </AnimatedSection>
       </Container>

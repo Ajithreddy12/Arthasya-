@@ -6,9 +6,9 @@ const Careers = () => {
   return (
     <PageWrapper>
       <SEO
-        title="Careers - Join Arthasya Communications | Job Opportunities"
-        description="Explore exciting career opportunities at Arthasya Communications. Join our dynamic team in Jaipur and be part of innovative communication and marketing projects. Apply now for available positions."
-        keywords="arthasya careers, job opportunities, communication jobs, marketing jobs Jaipur, brand strategy careers, work with us, join our team"
+        title="Careers - Join Binge Watch Digital | Job Opportunities"
+        description="Explore exciting career opportunities at Binge Watch Digital. Join our dynamic team and be part of innovative design and marketing projects. Apply now for available positions."
+        keywords="binge watch digital careers, job opportunities, design jobs, marketing jobs Jaipur, brand strategy careers, work with us, join our team"
         url="/careers"
       />
       <CareersHero />

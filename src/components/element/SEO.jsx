@@ -1,14 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({
-  title = "Arthasya Communications - Strategic Communication & Brand Solutions",
-  description = "Arthasya Communications delivers innovative communication strategies, brand development, and marketing solutions that drive meaningful impact for businesses across industries.",
-  keywords = "communication agency, brand strategy, marketing solutions, digital marketing, brand development, public relations, content marketing, strategic communication",
+  title = "Binge Watch Digital - Digital Design & Creative Agency",
+  description = "Binge Watch Digital delivers innovative digital design, brand development, and creative marketing solutions.",
+  keywords = "communication agency, brand strategy, marketing solutions, digital marketing, brand development, public relations, content marketing, strategic communication, Binge Watch Digital",
   image = "/og-image.jpg",
   url = "",
   type = "website",
-  author = "Arthasya Communications",
-  twitterHandle = "@ArthasyaComm"
+  author = "Binge Watch Digital",
+  twitterHandle = "@BingeWatch"
 }) => {
   const siteUrl = "https://www.arthasya.com";
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
@@ -30,7 +30,7 @@ const SEO = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImage} />
-      <meta property="og:site_name" content="Arthasya Communications" />
+      <meta property="og:site_name" content="Binge Watch Digital" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
@@ -54,7 +54,7 @@ const SEO = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "Arthasya Communications",
+          "name": "Binge Watch Digital",
           "url": siteUrl,
           "logo": `${siteUrl}/logo.png`,
           "description": description,
@@ -65,10 +65,10 @@ const SEO = ({
             "addressCountry": "IN"
           },
           "sameAs": [
-            "https://www.facebook.com/ArthasyaComm",
-            "https://www.twitter.com/ArthasyaComm",
-            "https://www.linkedin.com/company/arthasya-communications",
-            "https://www.instagram.com/arthasya_communications"
+            "https://www.facebook.com/BingeWatch",
+            "https://www.twitter.com/BingeWatch",
+            "https://www.linkedin.com/company/binge-watch-digital",
+            "https://www.instagram.com/bingewatchdigital"
           ]
         })}
       </script>

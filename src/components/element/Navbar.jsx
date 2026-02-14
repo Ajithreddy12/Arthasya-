@@ -4,6 +4,7 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { Menu, X, ChevronRight, Phone } from "lucide-react";
 import { Container } from "../layout";
 import Button from "./Button";
+import Logo from "./Logo";
 import { navigationItems } from "../../data";
 
 // Extracted hook for mobile menu logic
@@ -37,19 +38,12 @@ const Navbar = () => {
             <nav className="fixed inset-x-0 top-0 z-50 bg-[#140412]/90 backdrop-blur-md border-b border-white/5 shadow-lg transition-all duration-300">
                 <Container>
                     <div className="flex h-20 items-center justify-between">
-                        {/* Logo */}
                         <Link
                             to="/"
                             onClick={closeMenu}
-                            className="relative z-[110] flex items-center gap-3 group"
+                            className="relative z-[110]"
                         >
-                            {/* BW Logo - Circle with BW text */}
-                            <div className="w-10 h-10 rounded-full border-2 border-white group-hover:border-[#ec4899] transition-colors duration-300 flex items-center justify-center bg-[#140412]">
-                                <span className="text-white group-hover:text-[#ec4899] font-bold text-sm transition-colors duration-300">BW</span>
-                            </div>
-                            <h1 className="font-bold text-white leading-none text-xl group-hover:text-[#ec4899] transition-colors duration-300 tracking-tight">
-                                Binge Watch<span className="text-gray-400 text-[10px] align-top ml-0.5 font-normal">DIGITAL</span>
-                            </h1>
+                            <Logo />
                         </Link>
 
                         {/* Desktop Navigation */}
@@ -148,7 +142,28 @@ const Navbar = () => {
                             transition={{ type: "spring", damping: 30, stiffness: 300 }}
                             className="fixed inset-y-0 right-0 z-[9999] w-full max-w-sm bg-[#140412] shadow-2xl lg:hidden border-l border-white/10 overflow-y-auto"
                         >
-                            <div className="flex min-h-full flex-col p-6 pt-24">
+                            <div className="flex min-h-full flex-col p-6">
+                                {/* Mobile Menu Header */}
+                                <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/5">
+                                    <button
+                                        onClick={closeMenu}
+                                        className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+                                    >
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                                            <ChevronRight className="h-5 w-5 rotate-180" />
+                                        </div>
+                                        <span className="font-medium">Back</span>
+                                    </button>
+
+                                    <button
+                                        onClick={closeMenu}
+                                        className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ec4899]/10 text-[#ec4899] hover:bg-[#ec4899]/20 transition-colors"
+                                        aria-label="Close menu"
+                                    >
+                                        <X className="h-5 w-5" />
+                                    </button>
+                                </div>
+
                                 <nav className="flex flex-col space-y-2">
                                     {navigationItems.map((item, index) => {
                                         const isActive = pathname === item.path;

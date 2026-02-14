@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "../layout";
+import Logo from "./Logo";
 import { Twitter, Instagram, Facebook, MessageCircle, Check, ArrowRight } from "lucide-react";
 
 const Footer = () => {
@@ -27,13 +28,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Column 1: Logo */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-full border-2 border-white group-hover:border-[#ec4899] transition-colors duration-300 flex items-center justify-center bg-[#140412]">
-                <span className="text-white group-hover:text-[#ec4899] font-bold text-sm transition-colors duration-300">BW</span>
-              </div>
-              <h1 className="font-bold text-white text-xl tracking-tight group-hover:text-[#ec4899] transition-colors duration-300">
-                Binge Watch<span className="text-gray-400 text-[10px] align-top ml-0.5 font-normal">DIGITAL</span>
-              </h1>
+            <Link to="/" className="relative z-[110]">
+              <Logo />
             </Link>
           </div>
 

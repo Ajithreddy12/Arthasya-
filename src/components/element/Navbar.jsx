@@ -41,7 +41,7 @@ const Navbar = () => {
                         <Link
                             to="/"
                             onClick={closeMenu}
-                            className="flex items-center gap-3 group"
+                            className="relative z-[110] flex items-center gap-3 group"
                         >
                             {/* BW Logo - Circle with BW text */}
                             <div className="w-10 h-10 rounded-full border-2 border-white group-hover:border-[#ec4899] transition-colors duration-300 flex items-center justify-center bg-[#140412]">
@@ -98,7 +98,7 @@ const Navbar = () => {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={toggleMenu}
-                            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
+                            className="relative z-[110] flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
                             aria-label="Toggle menu"
                         >
                             <AnimatePresence mode="wait">
@@ -127,84 +127,84 @@ const Navbar = () => {
                         </button>
                     </div>
                 </Container>
-
-                {/* Mobile Menu Overlay */}
-                <AnimatePresence>
-                    {isOpen && (
-                        <>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
-                                onClick={closeMenu}
-                            />
-                            <motion.div
-                                initial={{ x: "100%" }}
-                                animate={{ x: 0 }}
-                                exit={{ x: "100%" }}
-                                transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                                className="fixed inset-y-0 right-0 z-40 w-full max-w-sm bg-[#1a0a14] shadow-2xl lg:hidden border-l border-white/10"
-                            >
-                                <div className="flex h-full flex-col p-6 pt-24">
-                                    <nav className="flex flex-col space-y-2">
-                                        {navigationItems.map((item, index) => {
-                                            const isActive = pathname === item.path;
-                                            return (
-                                                <motion.div
-                                                    key={item.path}
-                                                    initial={{ x: 50, opacity: 0 }}
-                                                    animate={{ x: 0, opacity: 1 }}
-                                                    transition={{ delay: index * 0.1 }}
-                                                >
-                                                    <Link
-                                                        to={item.path}
-                                                        onClick={closeMenu}
-                                                        className={`group flex items-center justify-between rounded-xl p-4 text-lg font-medium transition-all ${isActive
-                                                            ? "bg-[#ec4899]/10 text-[#ec4899]"
-                                                            : "text-gray-400 hover:bg-white/5 hover:text-white"
-                                                            }`}
-                                                    >
-                                                        <span>{item.label}</span>
-                                                        <ChevronRight
-                                                            className={`h-5 w-5 transition-transform group-hover:translate-x-1 ${isActive ? "text-[#ec4899]" : "text-gray-600"
-                                                                }`}
-                                                        />
-                                                    </Link>
-                                                </motion.div>
-                                            );
-                                        })}
-                                    </nav>
-
-                                    <motion.div
-                                        initial={{ y: 50, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        transition={{ delay: 0.4 }}
-                                        className="mt-auto"
-                                    >
-                                        <div className="rounded-2xl bg-gradient-to-br from-[#ec4899]/20 to-[#a855f7]/20 p-6 border border-white/10">
-                                            <h3 className="mb-2 text-lg font-bold text-white">
-                                                Let's create something specific?
-                                            </h3>
-                                            <p className="mb-4 text-sm text-gray-400">
-                                                We're ready to help bring your vision to life.
-                                            </p>
-                                            <Button
-                                                className="w-full flex flex-row items-center justify-center gap-2 bg-[#ec4899] hover:bg-[#be185d] text-white border-0 h-12"
-                                                onClick={() => window.location.href = 'tel:+919876543210'}
-                                            >
-                                                <Phone className="h-5 w-5 shrink-0" />
-                                                <span className="leading-none">Let's Talk</span>
-                                            </Button>
-                                        </div>
-                                    </motion.div>
-                                </div>
-                            </motion.div>
-                        </>
-                    )}
-                </AnimatePresence>
             </nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 z-[9998] bg-black/80 backdrop-blur-md lg:hidden"
+                            onClick={closeMenu}
+                        />
+                        <motion.div
+                            initial={{ x: "100%" }}
+                            animate={{ x: 0 }}
+                            exit={{ x: "100%" }}
+                            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                            className="fixed inset-y-0 right-0 z-[9999] w-full max-w-sm bg-[#140412] shadow-2xl lg:hidden border-l border-white/10 overflow-y-auto"
+                        >
+                            <div className="flex min-h-full flex-col p-6 pt-24">
+                                <nav className="flex flex-col space-y-2">
+                                    {navigationItems.map((item, index) => {
+                                        const isActive = pathname === item.path;
+                                        return (
+                                            <motion.div
+                                                key={item.path}
+                                                initial={{ x: 50, opacity: 0 }}
+                                                animate={{ x: 0, opacity: 1 }}
+                                                transition={{ delay: index * 0.1 }}
+                                            >
+                                                <Link
+                                                    to={item.path}
+                                                    onClick={closeMenu}
+                                                    className={`group flex items-center justify-between rounded-xl p-4 text-lg font-medium transition-all ${isActive
+                                                        ? "bg-[#ec4899]/10 text-[#ec4899]"
+                                                        : "text-gray-400 hover:bg-white/5 hover:text-white"
+                                                        }`}
+                                                >
+                                                    <span>{item.label}</span>
+                                                    <ChevronRight
+                                                        className={`h-5 w-5 transition-transform group-hover:translate-x-1 ${isActive ? "text-[#ec4899]" : "text-gray-600"
+                                                            }`}
+                                                    />
+                                                </Link>
+                                            </motion.div>
+                                        );
+                                    })}
+                                </nav>
+
+                                <motion.div
+                                    initial={{ y: 50, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ delay: 0.4 }}
+                                    className="mt-auto"
+                                >
+                                    <div className="rounded-2xl bg-gradient-to-br from-[#ec4899]/20 to-[#a855f7]/20 p-6 border border-white/10">
+                                        <h3 className="mb-2 text-lg font-bold text-white">
+                                            Let's create something specific?
+                                        </h3>
+                                        <p className="mb-4 text-sm text-gray-400">
+                                            We're ready to help bring your vision to life.
+                                        </p>
+                                        <Button
+                                            className="w-full flex flex-row items-center justify-center gap-2 bg-[#ec4899] hover:bg-[#be185d] text-white border-0 h-12"
+                                            onClick={() => window.location.href = 'tel:+919876543210'}
+                                        >
+                                            <Phone className="h-5 w-5 shrink-0" />
+                                            <span className="leading-none">Let's Talk</span>
+                                        </Button>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </LayoutGroup>
     );
 };

@@ -82,16 +82,17 @@ const Navbar = () => {
                                         </Link>
                                     );
                                 })}
+                                <div className="pl-1">
+                                    <Button
+                                        variant="primary"
+                                        className="h-9 px-4 bg-gradient-to-r from-[#ec4899] to-[#be185d] hover:from-[#be185d] hover:to-[#9d174d] text-white border-0 shadow-lg shadow-pink-500/20 text-sm flex flex-row items-center gap-2 rounded-full whitespace-nowrap flex-nowrap"
+                                        onClick={() => window.location.href = 'tel:+919876543210'}
+                                    >
+                                        <Phone className="h-4 w-4 shrink-0" />
+                                        <span className="leading-none">Let's Talk</span>
+                                    </Button>
+                                </div>
                             </div>
-
-                            <Button
-                                variant="primary"
-                                className="bg-gradient-to-r from-[#ec4899] to-[#be185d] hover:from-[#be185d] hover:to-[#9d174d] text-white border-0 shadow-lg shadow-pink-500/20"
-                                onClick={() => window.location.href = 'tel:+919876543210'}
-                            >
-                                <Phone className="mr-2 h-4 w-4" />
-                                <span>Let's Talk</span>
-                            </Button>
                         </motion.div>
 
                         {/* Mobile Menu Button */}
@@ -190,10 +191,11 @@ const Navbar = () => {
                                                 We're ready to help bring your vision to life.
                                             </p>
                                             <Button
-                                                className="w-full justify-center bg-[#ec4899] hover:bg-[#be185d] text-white border-0"
+                                                className="w-full flex flex-row items-center justify-center gap-2 bg-[#ec4899] hover:bg-[#be185d] text-white border-0 h-12"
                                                 onClick={() => window.location.href = 'tel:+919876543210'}
                                             >
-                                                Start Project
+                                                <Phone className="h-5 w-5 shrink-0" />
+                                                <span className="leading-none">Let's Talk</span>
                                             </Button>
                                         </div>
                                     </motion.div>

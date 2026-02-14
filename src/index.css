@@ -70,4 +70,18 @@
     .text-gradient {
         @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600;
     }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-scroll {
+        animation: scroll var(--animation-duration, 30s) linear infinite;
+    }
 }

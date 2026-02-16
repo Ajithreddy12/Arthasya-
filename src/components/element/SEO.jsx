@@ -60,8 +60,8 @@ const SEO = ({
           "description": description,
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Jaipur",
-            "addressRegion": "Rajasthan",
+            "addressLocality": "Greater Noida",
+            "addressRegion": "Uttar Pradesh",
             "addressCountry": "IN"
           },
           "sameAs": [

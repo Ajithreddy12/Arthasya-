@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, ChevronLeft, ChevronRight, Send } from "lucide-react";
+import { ChevronLeft, ChevronRight, Send } from "lucide-react";
 import { Container } from "../../layout";
 import { Button } from "../../element";
 
@@ -218,16 +218,7 @@ const HomeHero = () => {
                     <Send className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </Button>
 
-                  <Button
-                    as="a"
-                    href="/Portfolio.pptx"
-                    download
-                    variant="outline"
-                    className="w-full border-white/20 hover:border-pink-500/50 hover:bg-pink-500/10 text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 backdrop-blur-md transition-all text-xs md:text-sm uppercase font-bold tracking-wider"
-                  >
-                    <Download className="w-4 h-4" />
-                    <span>Portfolio</span>
-                  </Button>
+
                 </motion.div>
               </div>
             </div>

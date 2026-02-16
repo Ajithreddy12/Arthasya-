@@ -8,7 +8,6 @@ import {
   Freelancer,
   PartnerDetail,
   ClientDetail,
-  Work,
   Privacy,
   Terms,
   NotFound,
@@ -28,7 +27,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/freelancer" element={<Freelancer />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/work" element={<Work />} />
+
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
 

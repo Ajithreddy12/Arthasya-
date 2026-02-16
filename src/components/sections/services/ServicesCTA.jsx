@@ -14,7 +14,7 @@ const ServicesCTA = () => {
             Let's discuss how our services can help you achieve your business
             goals. Contact us today for a free consultation.
           </p>
-          <Button onClick={() => window.location.href = 'tel:9958800754'}>
+          <Button onClick={() => window.location.href = 'tel:+919958800754'}>
             Call Us Now
           </Button>
         </AnimatedSection>

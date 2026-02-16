@@ -21,7 +21,7 @@ const TeamInfiniteScrollSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <SectionHeading
           backgroundText="TEAM"
-          title="Meet The Talented People Behind Our Success"
+          title="The Creative Powerhouse Behind Our Success"
           ctaText="Join Our Team"
           onCtaClick={() => console.log("Navigate to careers")}
         />

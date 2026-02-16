@@ -1,20 +1,20 @@
 import { CONTACT_INFO } from "../../../data";
 import { Container, AnimatedSection } from "../../layout";
-import { SectionHeading } from "../../element";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const ContactInfo = () => {
     return (
         <section className="bg-white py-24 relative overflow-hidden">
             <Container>
-                <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-start">
+                <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
                     <AnimatedSection>
                         <div className="space-y-12">
                             <div>
                                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                                     Get In Touch
                                 </h2>
-                                <div className="w-20 h-1.5 bg-primary rounded-full mb-8" />
-                                <p className="text-lg text-gray-600 leading-relaxed">
+                                <div className="w-16 h-1.5 bg-[#ec4899] rounded-full mb-8" />
+                                <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
                                     We are always open to discussing new projects, creative ideas or
                                     opportunities to be part of your visions. Reach out to us through
                                     any of these channels.
@@ -23,15 +23,15 @@ const ContactInfo = () => {
 
                             <div className="space-y-10">
                                 {/* Email */}
-                                <div className="flex items-start space-x-6">
-                                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-2xl shadow-sm">
-                                        📧
+                                <div className="flex items-center space-x-6 group">
+                                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-indigo-500 shadow-sm transition-all duration-300 group-hover:bg-indigo-500 group-hover:text-white group-hover:scale-110">
+                                        <Mail className="h-6 w-6" />
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Email Us</h3>
+                                        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Email Us</h3>
                                         <a
                                             href={`mailto:${CONTACT_INFO.email}`}
-                                            className="text-xl font-semibold text-gray-900 hover:text-primary transition-colors block"
+                                            className="text-xl font-bold text-gray-900 hover:text-indigo-600 transition-colors block"
                                         >
                                             {CONTACT_INFO.email}
                                         </a>
@@ -39,17 +39,17 @@ const ContactInfo = () => {
                                 </div>
 
                                 {/* Phone */}
-                                <div className="flex items-start space-x-6">
-                                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-2xl shadow-sm">
-                                        📞
+                                <div className="flex items-center space-x-6 group">
+                                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-pink-500 shadow-sm transition-all duration-300 group-hover:bg-[#ec4899] group-hover:text-white group-hover:scale-110">
+                                        <Phone className="h-6 w-6" />
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Call Us</h3>
+                                        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Call Us</h3>
                                         {CONTACT_INFO.phone.map((number) => (
                                             <a
                                                 key={number}
                                                 href={`tel:${number}`}
-                                                className="text-xl font-semibold text-gray-900 hover:text-primary transition-colors block"
+                                                className="text-xl font-bold text-gray-900 hover:text-[#ec4899] transition-colors block"
                                             >
                                                 {number}
                                             </a>
@@ -58,13 +58,13 @@ const ContactInfo = () => {
                                 </div>
 
                                 {/* Address */}
-                                <div className="flex items-start space-x-6">
-                                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-2xl shadow-sm">
-                                        📍
+                                <div className="flex items-center space-x-6 group">
+                                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-rose-500 shadow-sm transition-all duration-300 group-hover:bg-rose-500 group-hover:text-white group-hover:scale-110">
+                                        <MapPin className="h-6 w-6" />
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Visit Us</h3>
-                                        <p className="text-xl font-semibold text-gray-900 leading-snug">
+                                        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Visit Us</h3>
+                                        <p className="text-xl font-bold text-gray-900 leading-snug max-w-sm">
                                             {CONTACT_INFO.address}
                                         </p>
                                     </div>
@@ -77,7 +77,7 @@ const ContactInfo = () => {
                         <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
                             <iframe
                                 src={CONTACT_INFO.mapEmbedUrl}
-                                className="h-full w-full border-0 grayscale hover:grayscale-0 transition-all duration-700 contrast-110"
+                                className="h-full w-full border-0 transition-all duration-700 contrast-110"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 title="Office Location"

@@ -15,7 +15,6 @@ const Contact = () => {
                 keywords="contact binge watch digital, get in touch, digital agency contact, business inquiries, web design consultation"
                 url="/contact"
             />
-            <ContactHero />
             <ContactInfo />
             <ContactForm />
         </PageWrapper>

@@ -227,15 +227,15 @@ const HomeHero = () => {
       </Container>
 
       <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center px-4">
-        <div className="bg-black/40 backdrop-blur-2xl border border-white/10 rounded-full p-1 flex items-center gap-1 shadow-2xl overflow-hidden">
+        <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-full p-2 flex items-center gap-2 shadow-2xl">
           <button
             onClick={() => paginate(-1)}
-            className="w-9 h-9 flex items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all shrink-0"
+            className="w-8 h-8 flex items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all shrink-0"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          <div className="flex gap-1.5 px-2">
+          <div className="flex gap-2 px-3">
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -244,7 +244,7 @@ const HomeHero = () => {
                   setIndex(i);
                   resetTimer();
                 }}
-                className="relative h-1 w-5 sm:w-8 bg-white/10 rounded-full overflow-hidden shrink-0"
+                className="relative h-1.5 w-6 sm:w-8 bg-white/20 rounded-full overflow-hidden shrink-0"
               >
                 {i === index && (
                   <motion.div
@@ -263,7 +263,7 @@ const HomeHero = () => {
 
           <button
             onClick={() => paginate(1)}
-            className="w-9 h-9 flex items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all shrink-0"
+            className="w-8 h-8 flex items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all shrink-0"
           >
             <ChevronRight className="w-5 h-5" />
           </button>

@@ -14,23 +14,23 @@ const SectionHeading = ({ backgroundText, title, ctaText, onCtaClick, className 
       {backgroundText && (
         <h2
           className="
-            absolute top-0 left-0
-            text-[3.2rem] md:text-[6rem] lg:text-[8rem]
-            font-extrabold uppercase
-            tracking-wider
-            opacity-10 
+            absolute -top-4 -left-4 md:-top-10 md:-left-8
+            text-[4rem] md:text-[8rem] lg:text-[11rem]
+            font-serif font-bold uppercase
+            tracking-tighter
+            text-gray-100
             select-none pointer-events-none
             leading-none
-            w-full overflow-hidden whitespace-nowrap
-            text-white/20
+            z-0
+            whitespace-nowrap
           "
         >
           {backgroundText}
         </h2>
       )}
 
-      <div className="relative pt-10 pl-4 md:pt-16 md:pl-16 z-10 flex flex-col md:block">
-        <h3 className="text-2xl md:text-5xl font-bold text-inherit leading-tight max-w-3xl">
+      <div className="relative pt-6 pl-2 md:pt-12 md:pl-10 z-10 flex flex-col md:block">
+        <h3 className="text-3xl md:text-6xl font-extrabold text-gray-900 leading-tight max-w-4xl tracking-tight">
           {title}
         </h3>
 

@@ -7,7 +7,7 @@ const Logo = ({ className = "" }) => {
                 <img
                     src={logoImg}
                     alt="BingeWatch Logo"
-                    className="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+                    className="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105 mix-blend-screen"
                 />
             </div>
         </div>

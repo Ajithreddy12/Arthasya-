@@ -35,7 +35,7 @@ const Navbar = () => {
 
     return (
         <LayoutGroup id="navbar-animation">
-            <nav className="fixed inset-x-0 top-0 z-50 bg-[#140412]/90 backdrop-blur-md border-b border-white/5 shadow-lg transition-all duration-300">
+            <nav className="fixed inset-x-0 top-0 z-50 bg-[#140412] border-b border-white/5 shadow-lg transition-all duration-300">
                 <Container>
                     <div className="flex h-20 items-center justify-between">
                         <Link

@@ -18,10 +18,17 @@ const AboutTeam = () => {
             career or freelance opportunities, we'd love to hear from you.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button onClick={() => navigate("/careers")}>
+            <Button
+              className="px-8 py-4 text-lg"
+              onClick={() => navigate("/careers")}
+            >
               View Career Opportunities
             </Button>
-            <Button variant="outline" onClick={() => navigate("/freelancer")}>
+            <Button
+              variant="outline"
+              className="px-8 py-4 text-lg"
+              onClick={() => navigate("/freelancer")}
+            >
               Freelance With Us
             </Button>
           </div>

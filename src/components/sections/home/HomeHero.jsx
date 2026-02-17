@@ -120,17 +120,24 @@ const HomeHero = () => {
     resetTimer();
   };
 
-  const renderTitle = (title, slideId) => {
-    if (slideId === 1 && title.includes("Digital")) {
-      const parts = title.split("Digital");
-      return (
-        <>
-          {parts[0]}{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#a855f7] inline-block font-extrabold">Digital</span>
-        </>
-      );
-    }
-    return title;
+  const renderTitle = (title) => {
+    const highlightWords = ["Digital", "Creative"];
+    let finalTitle = title;
+
+    highlightWords.forEach(word => {
+      if (title.includes(word)) {
+        const parts = title.split(word);
+        finalTitle = (
+          <>
+            {parts[0]}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#a855f7] inline-block font-extrabold">{word}</span>
+            {parts[1]}
+          </>
+        );
+      }
+    });
+
+    return finalTitle;
   };
 
   return (
@@ -190,7 +197,7 @@ const HomeHero = () => {
                 </motion.div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[85px] xl:text-[100px] font-bold text-white leading-[1.1] md:leading-[1.05] tracking-tight mb-6 md:mb-0 break-words drop-shadow-lg">
-                  {renderTitle(slides[index].title, slides[index].id)}
+                  {renderTitle(slides[index].title)}
                 </h1>
               </div>
 

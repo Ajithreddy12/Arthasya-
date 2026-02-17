@@ -101,34 +101,7 @@ const partnersData = [
       author: "University Leadership",
     },
   },
-  {
-    title: "Binge Watch Digital",
-    description:
-      "A dynamic digital media and content creation agency specializing in innovative storytelling and digital engagement strategies for modern brands.",
-    img: "/assets/partner/collab5.jpg",
-    category: "Digital Media",
-    founded: "2019",
-    location: "India",
-    website: "#",
-    services: [
-      "Content Creation",
-      "Digital Marketing",
-      "Brand Strategy",
-      "Social Media Management",
-    ],
-    keyStats: [
-      { label: "Campaigns Launched", value: "150+" },
-      { label: "Engagement Growth", value: "300%" },
-      { label: "Brand Partnerships", value: "50+" },
-    ],
-    partnershipHighlight:
-      "Driving digital transformation through compelling content and strategic brand storytelling.",
-    impactAreas: [
-      "Digital Storytelling",
-      "Brand Engagement",
-      "Content Innovation",
-    ],
-  },
+
   {
     title: "BETA Classes",
     description:

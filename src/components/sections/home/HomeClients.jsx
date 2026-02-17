@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { clientLogos } from "../../../data";
 import { Container, AnimatedSection } from "../../layout";
-import { SectionHeading, InfiniteMovingCards } from "../../element";
+import { SectionHeading } from "../../element";
 
 const ClientCardWrapper = ({ client }) => {
   const navigate = useNavigate();
@@ -44,23 +44,10 @@ const HomeClients = () => {
             title="Trusted by leading brands"
           />
 
-          <div className="space-y-0">
-            <InfiniteMovingCards
-              items={clientLogos.map((client) => (
-                <ClientCardWrapper key={client.title} client={client} />
-              ))}
-              direction="right"
-              speed="slow"
-              pauseOnHover={true}
-            />
-            <InfiniteMovingCards
-              items={clientLogos.map((client) => (
-                <ClientCardWrapper key={client.title} client={client} />
-              ))}
-              direction="left"
-              speed="slow"
-              pauseOnHover={true}
-            />
+          <div className="flex flex-wrap justify-center gap-8 mt-12">
+            {clientLogos.map((client) => (
+              <ClientCardWrapper key={client.title} client={client} />
+            ))}
           </div>
         </AnimatedSection>
       </Container>

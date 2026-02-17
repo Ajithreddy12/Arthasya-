@@ -50,14 +50,13 @@ const PartnerDetail = () => {
   return (
     <PageWrapper>
       <SEO
-        title={`${partner.title} - Strategic Partner | Arthasya Communications`}
+        title={`${partner.title} - Strategic Partner | Binge Watch Digital`}
         description={
           partner.description ||
           `Explore our strategic partnership with ${partner.title}. Learn about our collaboration, services, and the impact we've created together in ${partner.category}.`
         }
-        keywords={`${partner.title}, strategic partnership, ${
-          partner.category
-        }, business collaboration, ${partner.location || "global partnership"}`}
+        keywords={`${partner.title}, strategic partnership, ${partner.category
+          }, business collaboration, ${partner.location || "global partnership"}`}
         url={`/partners/${partnerId}`}
       />
       <section className="relative py-12 md:py-20 bg-gradient-to-br from-primary/5 via-ivory to-accent/5 overflow-hidden">

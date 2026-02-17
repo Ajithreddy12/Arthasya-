@@ -29,8 +29,8 @@ const ClientDetail = () => {
   return (
     <PageWrapper>
       <SEO
-        title={`${client.title} - Client Success Story | Arthasya Communications`}
-        description={client.description || `Learn about our successful partnership with ${client.title}. Discover how Arthasya Communications delivered exceptional communication and branding solutions driving meaningful impact.`}
+        title={`${client.title} - Client Success Story | Binge Watch Digital`}
+        description={client.description || `Learn about our successful partnership with ${client.title}. Discover how Binge Watch Digital delivered exceptional communication and branding solutions driving meaningful impact.`}
         keywords={`${client.title}, client success story, case study, brand partnership, marketing results, ${client.title} collaboration`}
         url={`/clients/${clientId}`}
       />
@@ -100,21 +100,21 @@ const ClientDetail = () => {
                               <span>{service}</span>
                             </li>
                           )) || (
-                            <>
-                              <li className="flex items-start gap-2">
-                                <span className="text-accent mt-1">•</span>
-                                <span>Brand Strategy & Development</span>
-                              </li>
-                              <li className="flex items-start gap-2">
-                                <span className="text-accent mt-1">•</span>
-                                <span>Communication & Marketing</span>
-                              </li>
-                              <li className="flex items-start gap-2">
-                                <span className="text-accent mt-1">•</span>
-                                <span>Digital & Social Media</span>
-                              </li>
-                            </>
-                          )}
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-accent mt-1">•</span>
+                                  <span>Brand Strategy & Development</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-accent mt-1">•</span>
+                                  <span>Communication & Marketing</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-accent mt-1">•</span>
+                                  <span>Digital & Social Media</span>
+                                </li>
+                              </>
+                            )}
                         </ul>
                       </div>
 

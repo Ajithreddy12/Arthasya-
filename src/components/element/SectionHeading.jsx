@@ -18,7 +18,7 @@ const SectionHeading = ({ backgroundText, title, ctaText, onCtaClick, className 
             text-[4rem] md:text-[8rem] lg:text-[11rem]
             font-serif font-bold uppercase
             tracking-tighter
-            text-gray-100
+            text-gray-200
             select-none pointer-events-none
             leading-none
             z-0

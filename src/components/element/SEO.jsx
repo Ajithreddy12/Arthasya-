@@ -10,7 +10,7 @@ const SEO = ({
   author = "Binge Watch Digital",
   twitterHandle = "@BingeWatch"
 }) => {
-  const siteUrl = "https://www.arthasya.com";
+  const siteUrl = "https://www.bingewatchdigital.com";
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 

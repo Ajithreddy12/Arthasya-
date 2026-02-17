@@ -27,11 +27,11 @@ const ContactInfo = () => {
                                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-indigo-500 shadow-sm transition-all duration-300 group-hover:bg-indigo-500 group-hover:text-white group-hover:scale-110">
                                         <Mail className="h-6 w-6" />
                                     </div>
-                                    <div>
+                                    <div className="flex-1 min-w-0">
                                         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Email Us</h3>
                                         <a
                                             href={`mailto:${CONTACT_INFO.email}`}
-                                            className="text-xl font-bold text-gray-900 hover:text-indigo-600 transition-colors block"
+                                            className="text-lg md:text-xl font-bold text-gray-900 hover:text-indigo-600 transition-colors block break-all"
                                         >
                                             {CONTACT_INFO.email}
                                         </a>
@@ -43,13 +43,13 @@ const ContactInfo = () => {
                                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-pink-500 shadow-sm transition-all duration-300 group-hover:bg-[#ec4899] group-hover:text-white group-hover:scale-110">
                                         <Phone className="h-6 w-6" />
                                     </div>
-                                    <div>
+                                    <div className="flex-1 min-w-0">
                                         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Call Us</h3>
                                         {CONTACT_INFO.phone.map((number) => (
                                             <a
                                                 key={number}
                                                 href={`tel:${number}`}
-                                                className="text-xl font-bold text-gray-900 hover:text-[#ec4899] transition-colors block"
+                                                className="text-lg md:text-xl font-bold text-gray-900 hover:text-[#ec4899] transition-colors block"
                                             >
                                                 {number}
                                             </a>
@@ -62,9 +62,9 @@ const ContactInfo = () => {
                                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-rose-500 shadow-sm transition-all duration-300 group-hover:bg-rose-500 group-hover:text-white group-hover:scale-110">
                                         <MapPin className="h-6 w-6" />
                                     </div>
-                                    <div>
+                                    <div className="flex-1">
                                         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Visit Us</h3>
-                                        <p className="text-xl font-bold text-gray-900 leading-snug max-w-sm">
+                                        <p className="text-lg md:text-xl font-bold text-gray-900 leading-snug">
                                             {CONTACT_INFO.address}
                                         </p>
                                     </div>

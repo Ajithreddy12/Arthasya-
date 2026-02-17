@@ -29,7 +29,7 @@ const ContactHero = () => {
 
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
                 Whether you have a question, a project in mind, or just want to
-                say hello, we're here to listen. At Arthasya, we believe every
+                say hello, we're here to listen. At Binge Watch Digital, we believe every
                 great partnership begins with a simple conversation.
               </p>
             </motion.div>

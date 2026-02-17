@@ -31,7 +31,7 @@ const ContactInfo = () => {
                                         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Email Us</h3>
                                         <a
                                             href={`mailto:${CONTACT_INFO.email}`}
-                                            className="text-lg md:text-xl font-bold text-gray-900 hover:text-indigo-600 transition-colors block break-all"
+                                            className="text-sm md:text-base font-bold text-gray-900 hover:text-indigo-600 transition-colors block break-all"
                                         >
                                             {CONTACT_INFO.email}
                                         </a>

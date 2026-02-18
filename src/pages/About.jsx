@@ -3,7 +3,6 @@ import {
   AboutHero,
   AboutKnowUs,
   AboutTeam,
-  TeamInfiniteScrollSection,
 } from "../components/sections/about";
 import SEO from "../components/element/SEO";
 
@@ -18,7 +17,6 @@ const About = () => {
       />
       <AboutHero />
       <AboutKnowUs />
-      <TeamInfiniteScrollSection />
       <AboutTeam />
     </PageWrapper>
   );

@@ -58,6 +58,32 @@
     }
 }
 
+/* Mobile font-size boost for readability */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    /* Bump tiny text so it's legible on phones */
+    .text-xs {
+        font-size: 0.95rem !important;
+        /* ~15px instead of 12px */
+        line-height: 1.4 !important;
+    }
+
+    .text-sm {
+        font-size: 1.1rem !important;
+        /* ~18px instead of 14px */
+        line-height: 1.55 !important;
+    }
+
+    .text-base {
+        font-size: 1.2rem !important;
+        /* ~19px instead of 16px */
+        line-height: 1.65 !important;
+    }
+}
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;

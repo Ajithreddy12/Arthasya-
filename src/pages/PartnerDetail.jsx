@@ -59,7 +59,7 @@ const PartnerDetail = () => {
           }, business collaboration, ${partner.location || "global partnership"}`}
         url={`/partners/${partnerId}`}
       />
-      <section className="relative py-12 md:py-20 bg-gradient-to-br from-primary/5 via-ivory to-accent/5 overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-gradient-to-br from-primary/5 via-gray-50 to-accent/5 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
@@ -109,7 +109,7 @@ const PartnerDetail = () => {
               aria-label="Back to Home"
             >
               <ArrowLeft className="w-5 h-5 text-primary transition-transform group-hover:-translate-x-1" />
-              <span className="font-semibold text-charcoal">Back to Home</span>
+              <span className="font-semibold text-gray-800">Back to Home</span>
             </button>
           </motion.div>
 
@@ -121,7 +121,7 @@ const PartnerDetail = () => {
               animate="visible"
             >
               <motion.div
-                className="relative h-72 md:h-96 bg-gradient-to-br from-primary/10 via-ivory to-accent/10 flex items-center justify-center p-8 md:p-16 overflow-hidden"
+                className="relative h-72 md:h-96 bg-gradient-to-br from-primary/10 via-gray-50 to-accent/10 flex items-center justify-center p-8 md:p-16 overflow-hidden"
                 variants={scaleUp}
               >
                 <motion.div
@@ -180,7 +180,7 @@ const PartnerDetail = () => {
                 </motion.div>
 
                 <motion.h1
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-charcoal via-primary to-charcoal bg-clip-text text-transparent"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900"
                   variants={fadeInUp}
                   initial="hidden"
                   animate="visible"
@@ -207,10 +207,10 @@ const PartnerDetail = () => {
                           <Calendar className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                          <p className="text-xs text-charcoal/60 uppercase tracking-wider font-semibold mb-1">
+                          <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">
                             Founded
                           </p>
-                          <p className="text-xl font-bold text-charcoal">
+                          <p className="text-xl font-bold text-gray-900">
                             {partner.founded}
                           </p>
                         </div>
@@ -229,10 +229,10 @@ const PartnerDetail = () => {
                           <Globe className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                          <p className="text-xs text-charcoal/60 uppercase tracking-wider font-semibold mb-1">
+                          <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">
                             Location
                           </p>
-                          <p className="text-xl font-bold text-charcoal">
+                          <p className="text-xl font-bold text-gray-900">
                             {partner.location}
                           </p>
                         </div>
@@ -250,10 +250,10 @@ const PartnerDetail = () => {
                         <Building2 className="w-7 h-7 text-primary" />
                       </div>
                       <div>
-                        <p className="text-xs text-charcoal/60 uppercase tracking-wider font-semibold mb-1">
+                        <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">
                           Partnership
                         </p>
-                        <p className="text-xl font-bold text-charcoal">
+                        <p className="text-xl font-bold text-gray-900">
                           Strategic
                         </p>
                       </div>
@@ -262,13 +262,13 @@ const PartnerDetail = () => {
                 </motion.div>
 
                 <motion.div
-                  className="relative bg-gradient-to-r from-ivory/50 to-transparent rounded-2xl p-8 mb-12 border-l-4 border-primary"
+                  className="relative bg-gradient-to-r from-gray-50 to-transparent rounded-2xl p-8 mb-12 border-l-4 border-primary"
                   variants={fadeInUp}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: 0.2 }}
                 >
-                  <p className="text-lg md:text-xl text-charcoal/80 leading-relaxed">
+                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                     {partner.description}
                   </p>
                 </motion.div>
@@ -327,7 +327,7 @@ const PartnerDetail = () => {
                           <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-accent group-hover:to-accent-dark transition-all">
                             <CheckCircle2 className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
                           </div>
-                          <span className="text-charcoal font-semibold group-hover:text-primary transition-colors">
+                          <span className="text-gray-800 font-semibold group-hover:text-primary transition-colors">
                             {service}
                           </span>
                         </motion.div>
@@ -352,11 +352,11 @@ const PartnerDetail = () => {
                           <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center shadow-lg">
                             <Award className="w-7 h-7 text-white" />
                           </div>
-                          <h2 className="text-2xl md:text-3xl font-bold text-charcoal">
+                          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
                             Partnership Highlight
                           </h2>
                         </div>
-                        <p className="text-lg md:text-xl text-charcoal/80 leading-relaxed">
+                        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                           {partner.partnershipHighlight}
                         </p>
                       </div>
@@ -377,7 +377,7 @@ const PartnerDetail = () => {
                         <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                           <Target className="w-6 h-6 text-primary" />
                         </div>
-                        <h3 className="text-2xl font-bold text-charcoal">
+                        <h3 className="text-2xl font-bold text-gray-900">
                           Impact Areas
                         </h3>
                       </div>
@@ -385,7 +385,7 @@ const PartnerDetail = () => {
                         {partner.impactAreas.map((area, index) => (
                           <motion.span
                             key={index}
-                            className="group relative bg-gradient-to-r from-white to-ivory px-6 py-3 rounded-full text-sm font-bold text-primary border-2 border-primary/30 hover:bg-gradient-to-r hover:from-primary hover:to-primary-dark hover:text-white transition-all duration-300 shadow-md hover:shadow-xl cursor-default overflow-hidden"
+                            className="group relative bg-white px-6 py-3 rounded-full text-sm font-bold text-primary border-2 border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-xl cursor-default overflow-hidden"
                             initial={{ opacity: 0, scale: 0.8, y: 20 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -417,7 +417,7 @@ const PartnerDetail = () => {
                           "
                         </div>
                         <div className="flex-1">
-                          <p className="text-lg md:text-xl text-charcoal/90 italic mb-6 leading-relaxed font-medium">
+                          <p className="text-lg md:text-xl text-gray-800 italic mb-6 leading-relaxed font-medium">
                             {partner.testimonial.quote}
                           </p>
                           <div className="flex items-center gap-3">
@@ -467,7 +467,7 @@ const PartnerDetail = () => {
                         aria-label={`View ${p.title} partnership details`}
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/5 group-hover:to-accent/5 transition-all duration-500 z-10 pointer-events-none"></div>
-                        <div className="relative h-64 bg-gradient-to-br from-primary/5 via-ivory to-accent/5 flex items-center justify-center p-8 overflow-hidden">
+                        <div className="relative h-64 bg-gradient-to-br from-primary/5 via-gray-50 to-accent/5 flex items-center justify-center p-8 overflow-hidden">
                           <motion.div
                             className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl"
                             animate={{
@@ -487,10 +487,10 @@ const PartnerDetail = () => {
                             <Sparkles className="w-3 h-3" />
                             {p.category}
                           </span>
-                          <h3 className="text-xl font-bold text-charcoal mb-3 group-hover:text-primary transition-colors leading-tight">
+                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors leading-tight">
                             {p.title}
                           </h3>
-                          <p className="text-sm text-charcoal/60 line-clamp-2 leading-relaxed mb-4">
+                          <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed mb-4">
                             {p.description}
                           </p>
                           <div className="flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">

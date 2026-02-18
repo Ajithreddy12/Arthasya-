@@ -34,7 +34,7 @@ const ClientDetail = () => {
         keywords={`${client.title}, client success story, case study, brand partnership, marketing results, ${client.title} collaboration`}
         url={`/clients/${clientId}`}
       />
-      <section className="py-20 bg-gradient-to-b from-ivory to-white">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
           <AnimatedSection>
             <div className="max-w-4xl mx-auto">
@@ -59,7 +59,7 @@ const ClientDetail = () => {
               </button>
 
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="h-96 bg-gradient-to-br from-sage-light to-ivory flex items-center justify-center p-12">
+                <div className="h-96 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center p-12">
                   <img
                     src={client.img}
                     alt={`${client.title} logo - Arthasya Communications client`}
@@ -68,11 +68,11 @@ const ClientDetail = () => {
                 </div>
 
                 <div className="p-8 md:p-12">
-                  <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
+                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     {client.title}
                   </h1>
 
-                  <div className="prose prose-lg max-w-none text-charcoal/80">
+                  <div className="prose prose-lg max-w-none text-gray-700">
                     <p className="text-lg leading-relaxed mb-8">
                       {client.description || `We're proud to collaborate with ${client.title}, delivering exceptional communication and branding solutions that drive meaningful impact.`}
                     </p>
@@ -82,18 +82,18 @@ const ClientDetail = () => {
                         {Object.entries(client.stats).map(([key, value]) => (
                           <div key={key} className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-4 text-center">
                             <p className="text-2xl font-bold text-primary mb-1">{value}</p>
-                            <p className="text-sm text-charcoal/60 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                            <p className="text-sm text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                           </div>
                         ))}
                       </div>
                     )}
 
                     <div className="grid md:grid-cols-2 gap-8 mt-8">
-                      <div className="bg-ivory/50 rounded-xl p-6">
+                      <div className="bg-gray-50 rounded-xl p-6">
                         <h3 className="text-xl font-semibold text-primary mb-3">
                           Services Provided
                         </h3>
-                        <ul className="space-y-2 text-charcoal/70">
+                        <ul className="space-y-2 text-gray-700">
                           {client.services?.map((service, idx) => (
                             <li key={idx} className="flex items-start gap-2">
                               <span className="text-accent mt-1">•</span>
@@ -118,11 +118,11 @@ const ClientDetail = () => {
                         </ul>
                       </div>
 
-                      <div className="bg-ivory/50 rounded-xl p-6">
+                      <div className="bg-gray-50 rounded-xl p-6">
                         <h3 className="text-xl font-semibold text-primary mb-3">
                           Impact & Results
                         </h3>
-                        <p className="text-charcoal/70">
+                        <p className="text-gray-700">
                           {client.impact || 'Through strategic collaboration and innovative solutions, we\'ve helped achieve remarkable results and establish a strong market presence.'}
                         </p>
                       </div>
@@ -136,7 +136,7 @@ const ClientDetail = () => {
           {allClients.length > 0 && (
             <AnimatedSection delay={200}>
               <div className="mt-20">
-                <h2 className="text-3xl font-bold text-center mb-12 text-charcoal">
+                <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
                   Other Clients
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
@@ -159,7 +159,7 @@ const ClientDetail = () => {
                             className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
-                        <p className="text-xs text-charcoal/80 text-center line-clamp-2">
+                        <p className="text-xs text-gray-700 text-center line-clamp-2">
                           {c.title}
                         </p>
                       </button>
